@@ -1,0 +1,9 @@
+function init(self)
+	--print(msg.url())
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("name") then
+		msg.post("00001x01:/leaderboard#leader_name", "leader")
+	end	
+end

@@ -1,0 +1,10 @@
+name: "leaderboard"
+scale_along_z: 0
+embedded_instances {
+  id: "leadrboard"
+  data: "components {\n"
+  "  id: \"leaderboard\"\n"
+  "  component: \"/zAssets/leaderboard/leaderboard.gui\"\n"
+  "}\n"
+  ""
+}

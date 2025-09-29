@@ -1,0 +1,64 @@
+local function save_game_data(highscore, name)
+	local filename = sys.get_save_file("air_wars_score_data", "game_data")
+	sys.save(filename, { highscore = highscore, name = name })
+end
+
+local function load_game_data_name()
+	local filename = sys.get_save_file("air_wars_score_data", "game_data")
+	local data = sys.load(filename)
+	return data.name or 0
+end
+
+local function load_game_data_highscore()
+	local filename = sys.get_save_file("air_wars_score_data", "game_data")
+	local data = sys.load(filename)
+	return data.highscore or 0
+end
+
+local function load_name()
+	local filename = sys.get_save_file("air_wars_score_data", "game_data")
+	local data = sys.load(filename)
+	return data.name or 0
+end
+
+local function load_highscore()
+	local filename = sys.get_save_file("air_wars_score_data", "game_data")
+	local data = sys.load(filename)
+	return data.highscore or 0
+end
+
+
+local function save_highscore(highscore)
+	local filename = sys.get_save_file("air_wars_score_data", "game_data")
+	sys.save(filename, { highscore = highscore })
+end
+
+local function save_name(name)
+	local filename = sys.get_save_file("air_wars_score_data", "game_data")
+	sys.save(filename, { name = name })
+end
+
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+
+	self.high_score = load_game_data_highscore()
+	gui.set_text(gui.get_node("high_score"), string.format("%08d", self.high_score))
+
+	self.name = load_game_data_name()
+	gui.set_text(gui.get_node("name"), self.name)
+
+	--print(msg.url())
+end
+
+function on_message(self, message_id, message, sender)
+
+end
+
+function on_input(self, action_id, action)
+	if action_id == hash("touch") and action.pressed then
+		if gui.pick_node(gui.get_node("return"), action.x, action.y) then
+			msg.post("loader:/loader#loader", "show_main_menu")
+		end
+	end
+end

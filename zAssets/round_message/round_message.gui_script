@@ -1,0 +1,13 @@
+
+function init(self)
+	
+end
+
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("message_new_round") then
+		gui.set_enabled(gui.get_node("message"), true)
+	elseif message_id == hash("round_start") then
+		gui.set_enabled(gui.get_node("message"), false)
+	end
+end

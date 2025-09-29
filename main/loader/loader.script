@@ -1,0 +1,26 @@
+local function show(self, proxy)
+	if self.current_proxy then
+		msg.post(self.current_proxy, "unload")
+		self.current_proxy = nil
+	end
+	msg.post(proxy, "async_load")
+end
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	self.current_proxy = nil
+	msg.post("#", "show_main_menu")
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("show_main_menu") then
+		show(self, "#main_menu")
+	elseif message_id == hash("main") then
+		show(self, "#main")
+	elseif message_id == hash("leaderboard") then
+		show(self, "#leaderboard")
+	elseif message_id == hash("proxy_loaded") then
+		self.current_proxy = sender
+		msg.post(sender, "enable")	
+	end
+end

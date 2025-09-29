@@ -1,0 +1,137 @@
+script: "/zAssets/leaderboard/leaderboards.gui_script"
+fonts {
+  name: "mainmenu"
+  font: "/zResources/fonts/game.font"
+}
+nodes {
+  position {
+    x: 300.0
+    y: 100.0
+  }
+  scale {
+    x: 0.75
+  }
+  size {
+    x: 800.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Return to Main Menu"
+  font: "mainmenu"
+  id: "return"
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 350.0
+    y: 581.0
+  }
+  scale {
+    x: 1.5
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Leaderboard"
+  font: "mainmenu"
+  id: "title"
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 200.0
+    y: 435.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Top Score:"
+  font: "mainmenu"
+  id: "score"
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 400.0
+    y: -200.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  font: "mainmenu"
+  id: "high_score"
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  parent: "score"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: -200.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  font: "mainmenu"
+  id: "name"
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  shadow {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  parent: "score"
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

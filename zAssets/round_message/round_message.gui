@@ -1,0 +1,32 @@
+script: "/zAssets/round_message/round_message.gui_script"
+fonts {
+  name: "game"
+  font: "/zResources/fonts/game.font"
+}
+nodes {
+  position {
+    x: 640.0
+    y: 360.0
+  }
+  scale {
+    x: 2.0
+    y: 2.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.8
+    y: 0.8
+    z: 0.8
+  }
+  type: TYPE_TEXT
+  text: "ENTER CIRCLE TO\n"
+  "BEGIN NEXT ROUND"
+  font: "game"
+  id: "message"
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

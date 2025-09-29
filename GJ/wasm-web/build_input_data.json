@@ -1,0 +1,13 @@
+{
+  "project_git" : {
+    "sha1" : "1777d836d8690bcf3ef85c4c22498aba0482df59",
+    "origin" : "https://github.com/vigmu2gmes/Roll-With-the-Punches.git",
+    "branch" : "main"
+  },
+  "bob_arguments" : {
+    "sha1" : "7c81792859a6da7f7401c0ac37a4cc83bb500ff6",
+    "version" : "1.11.0",
+    "timestamp" : "2025-09-04 12:54:20"
+  },
+  "defold_sdk" : "7c81792859a6da7f7401c0ac37a4cc83bb500ff6"
+}

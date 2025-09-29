@@ -1,5 +1,10 @@
+local game = require("zScripts.game")
+
 function init(self)
 	self.score = 0
+	self.defeats = 0
+
+	
 end
 
 function final(self)
@@ -17,7 +22,18 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("score") then
 		self.score = self.score + message.score
-		gui.set_text(gui.get_node("score"), "%0d8" .. self.score)
+		gui.set_text(gui.get_node("score"), string.format("%08d", self.score))
+	elseif message_id == hash("set_enemy_count") then
+		gui.set_text(gui.get_node("count"), string.format("%02d", message.count ))
+	elseif message_id == hash("defeats") then
+		self.defeats = self.defeats + message.defeated
+		gui.set_text(gui.get_node("defeated"), string.format("%02d", self.defeats))
+
+		if self.defeats == game.enemy_count then
+			self.defeats = 0
+			msg.post("main:/environment#round_message", "message_new_round")
+		end
+		
 	end
 end
 

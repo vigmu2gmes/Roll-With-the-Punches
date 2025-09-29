@@ -26,9 +26,10 @@ function fixed_update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
-	if message_id == hash("trigger_response") then
-		if message.enter then
-			print("ROLL CIRCLE SCRIPT = ", true)
+	if message_id == hash("collision_response") then
+		if message.other_group == hash("player") then
+			print("collisionobject of roll circle is disable")
+			msg.post("#collisionobject", "disable")
 		end
 	end
 end
