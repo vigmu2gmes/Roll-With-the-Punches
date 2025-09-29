@@ -1,0 +1,10 @@
+images {
+  image: "/zResources/PNGs/ground.png"
+}
+images {
+  image: "/zResources/PNGs/face_picker.png"
+}
+images {
+  image: "/zResources/PNGs/dice roll.png"
+}
+extrude_borders: 2

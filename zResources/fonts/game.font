@@ -1,0 +1,4 @@
+font: "/zResources/fonts/Walk-Around-the-Block.ttf"
+material: "/builtins/fonts/font.material"
+size: 25
+characters: " !\"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"

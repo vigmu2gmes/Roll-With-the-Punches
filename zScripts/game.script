@@ -1,0 +1,28 @@
+function init(self)
+	factory.create("#face_picker", vmath.vector3(-300, -300, 0))
+	
+	factory.create("#roll_circle", vmath.vector3(640, 360, 0), nil, {}, .20)
+	factory.create("#player_factory", vmath.vector3(300, 360, 0.1), nil, {}, .5)
+
+	math.randomseed(os.time())
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("spawn_enemies") then
+		for x = 1, message.spawning do
+			factory.create("#enemy_factory", vmath.vector3(math.random(225, 1075), math.random(100, 500), 0))
+		end
+	end
+end

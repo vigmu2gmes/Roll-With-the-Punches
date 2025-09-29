@@ -1,0 +1,17 @@
+local positions = {
+	vmath.vector3(640, 540, 0), vmath.vector3(225, 540, 0),
+	vmath.vector3(1075, 540, 0), vmath.vector3(225, 175, 0),
+	vmath.vector3(640, 175, 0), vmath.vector3(1075, 175, 0)
+}
+
+function init(self)
+	
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("face_picker_positions") then
+		for _, p in pairs(positions) do
+			go.set_position(positions[message.position])
+		end
+	end
+end

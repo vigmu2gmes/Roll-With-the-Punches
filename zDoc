@@ -1,0 +1,49 @@
+Core Loop:
+1.	Player starts anywhere on the board. (SPAWN)
+2.	Player rolls dice. (INITIATE ROUND)
+3.	Rolled value determines the number of enemies. (ENEMY DETERMINATION)
+4.	Defeat all enemies for round to be completed. (ROUND FINISHED)
+5.	Points alloted to score for: (COLLECT SCORE)
+		enemies defeated, 
+		time it took
+6.	Player continues fighting until health has reached 0. (BACK TO 2 or move to 7 depending on player health)
+
+Outside core loop:
+7.	If player health is 0, add score to leaderboard.
+8.	Show final leaderboard produced through Heroku for player competition.
+		Make a way for adding player names, 
+		long enough for most handles or initials? Like old-school arcade leaderboards.
+
+
+
+Game Flow:
+Game opening  to a menu with three options to choose, start game, leaderboard, and settings. 
+Leaderboard returns high scores  recorded.  (Set up Heroku for leaderboard.)
+Settings will comprise of toggling music, sound effects, narrating on or off. 
+Start game will  take player to the arena. 
+Dialogue of not knowing where you are then dialogue on a loud speaker on what is happening. 
+“Welcome to the Dicer.  Name of the game is Roll With the Punches.  How long can you survive?  Before we get started, check out the rules on the display screen.”
+
+Rules pop up on a screen as followed:
+	Dice roll determines number of enemies. 
+	Defeat all enemies.
+	Gain points.
+	Survive. 
+
+“Stop wasting the time of our excited spectators.  
+	They are ready for some carnage.  
+	Enter the  circle to roll and determine your first round of enemies.  
+	Make this worth watching and don’t forget…… SURVIVE!!!!!”
+
+Player enters the circle and dice roll begins for values between 1 to 6. 
+Enemies spawn  from circles  on the ground. 
+Player fights and either loses and defeats enemies. 
+Defeat: Points are allocated for enemies defeated, time it took, and health left. 
+Loss: Start over at round one or return to main menu. 
+
+Points: 
+Get score total after each round and add up until player  health reaches 0. 
+Enemies: +10 points for any enemy defeated. 
+Time: - time it takes to defeat all enemies. 
+Health: +quarter health left to current health as a bonus. 
+
